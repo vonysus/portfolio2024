@@ -1,0 +1,846 @@
+/* 언어설정 */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+
+.scroll {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+}
+/* box1 설정 */
+/* 띠배너 설정 */
+.box1-1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.animate-title {
+    display: flex;
+    background-color: #6967C4;
+    height: 40px;
+    align-items: center;
+}
+.animate-title ul {
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+.animate-title ul:nth-child(1) {
+    left: 0;
+    animation: animate-title01 linear 25s infinite;
+}
+.animate-title ul:nth-child(2) {
+    left: 100%;
+    animation: animate-title02 linear 25s infinite;
+}
+.animate-title li {
+    width: 20%;
+    color: #fff;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+}
+
+@keyframes animate-title01 {
+    0% {left: 0;}
+    50% {left: -100%;}
+    50.00001% {left: 100%;}
+    100% {left: 0;}
+}
+@keyframes animate-title02 {
+    0% {left: 100%;}
+    50% {left: 0;}
+    100% {left: -100%;}
+}
+
+.box1-2 {
+    background-color: #F3F3F8;
+}
+
+.box1-2 .gnb {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.box1-2 .gnb .logo {
+    width: 10%;
+}
+.box1-2 .gnb h1 {
+    background-image: url(img/01.main/01.header/logo.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
+.box1-2 .gnb .menu {
+    width: 60%;
+}
+.box1-2 .gnb .menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box1-2 .gnb .menu li a {
+    color: #6967C4;
+    font-size: 20px;
+}
+.box1-2 .gnb .menu li:hover a {
+    font-weight: 600;
+}
+
+.box1-2 .gnb .util {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10%;
+}
+.box1-2 .gnb .util p {
+    display: block;
+    margin: 0 12px;
+}
+.box1-2 .gnb .util i {
+    color: #6967C4;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box1-2 .gnb .util i:hover {
+    font-weight: 600;
+}
+
+/* box2 설정 */
+.box2 {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+.box2 .arrow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    margin-left: -640px;
+}
+.box2 .arrow .left {
+    position: absolute;
+    left: 0%;
+    bottom: 5%;
+    z-index: 20;
+}
+.box2 .arrow .right {
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+    z-index: 20;
+}
+.box2 .arrow>p img {
+    width: 70%;
+    cursor: pointer;
+    transition: all linear 0.4s;
+}
+.box2 .arrow>p img:hover {
+    transform: translateY(-4px);
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.1));
+}
+.box2 .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box2 .slide>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.box2-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.box2-inner .txtBox {
+    width: 100%;
+    position: absolute;
+    z-index: 15;
+    top: 10%;
+    transform: translateX(-140%);
+    transition: all 1.5s;
+}
+.box2 .slide>div.on .txtBox {
+    transform: translateX(0);
+}
+.box2-inner .txtBox h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.box2-inner .txtBox p {
+    font-size: 32px;
+    color: #fff;
+}
+.box2 .imgBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-origin: right bottom;
+    position: absolute;
+    bottom: 0;
+}
+.box2 .imgBox .KBimg {
+    transform-origin: right bottom;
+    transform: rotate(100deg);
+    width: 300%;
+    height: 300%;
+    transition: all 1.5s;
+    position: absolute;
+    right: -26%;
+    bottom: -40%;
+    z-index: 10;
+}
+.box2 .slide>div.on .imgBox .KBimg {
+    transform: rotate(0deg);
+}
+.box2 .imgBox .KBimg img {
+    width: 20%;
+    position: absolute;
+    right: 8%;
+    top: 66%;
+    transition: all 1.2s;
+}
+.box2 .ellipse {
+    width: 1200px;
+    height: 1200px;
+    flex-shrink: 0;
+    border-radius: 990px;
+    text-indent: -9999px;
+    position: absolute;
+    bottom: 0;
+    right: -600px;
+    transform: rotate(0);
+    z-index: 5;
+    transition: all 1.6s;
+}
+.box2 .slide>div.on .ellipse {
+    transform: rotate(180deg);
+}
+
+
+/* box2-$ 개별설정 */
+.box2-1 {
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(144,148,149,1) 0%, rgba(236,236,239,1) 100%);
+}
+.box2-1 .ellipse {
+    background: conic-gradient(from 180deg at 50% 50%, #919596 0deg, rgba(255, 255, 255, 0.00) 360deg);
+}
+
+.box2-2 {
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(145,208,178,1) 0%, rgba(246,232,129,1) 100%);
+}
+.box2-2 .ellipse {
+    background: conic-gradient(from 180deg at 50% 50%, #93D0AC 0deg, rgba(255, 255, 255, 0.00) 360deg);
+}
+
+.box2-3 {
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(165,149,201,1) 0%, rgba(239,231,251,1) 100%);
+}
+.box2-3 .ellipse {
+    background: conic-gradient(from 180deg at 50% 50%, #C6B8E4 0deg, rgba(255, 255, 255, 0.00) 360deg);
+}
+
+.box2 .slide>div.on {
+    opacity: 1;
+}
+
+/* box3 설정 */
+.box3 {
+    padding: 120px 0;
+    position: relative;
+    height: 980px;
+    overflow: hidden;
+}
+.box3-inner {
+    width: 100vw;
+    overflow: hidden;
+    height: 220px;
+    display: flex;
+}
+.box3-inner .txtBox {
+    width: 30%;
+}
+.box3-inner .txtBox h2 {
+    color: #47467C;
+    font-size: 36px;
+}
+.box3 .listBox {
+    width: 60%;
+    position: absolute;
+    top: 120px;
+    right: 0;
+}
+.box3 .listBox ul {
+    display: flex;
+    overflow: hidden;
+    height: 220px;
+}
+.box3 .listBox li {
+    width: 30%;
+    margin-right: 60px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.box3 .listBox li .imgBox {
+    height: 180px;
+}
+.box3 .listBox li .imgBox img {
+    width: 100%;
+    text-align: center;
+}
+.box3 .listBox li:hover .imgBox img {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+}
+.box3 .listBox li.on .imgBox img {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+}
+.box3 .listBox li .txt {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.box3 .listBox li .txt p {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #7A7A8C;
+    margin-bottom: 4px;
+}
+.box3 .listBox li .txt h3 {
+    text-align: center;
+    font-size: 18px;
+    color: #6967C4;
+    font-weight: 400;
+}
+.box3 .listBox li:hover .txt h3 {
+    font-weight: 600;
+}
+.box3 .listBox li.on .txt h3 {
+    font-weight: 600;
+}
+
+.box3 .box3-imgBox {
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.box3 .box3-imgBox>div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    opacity: 0;
+}
+
+/* .box3-imgBox 공통설정 */
+.box3 .box3-imgBox>div>div {
+    position: absolute;
+}
+.box3 .box3-imgBox>div .left {
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    left: -100%;
+    transition: all 1.5s;
+    top: 5%;
+}
+.box3 .box3-imgBox>div.on .left {
+    left: 0;
+}
+.box3 .box3-imgBox>div .right {
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+    bottom: 5%;
+    right: -100%;
+    transition: all 1.5s;
+}
+.box3 .box3-imgBox>div.on .right {
+    right: 0;
+}
+.box3 .box3-imgBox>div .kb {
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.box3 .box3-imgBox>div .kb img {
+    scale: 0.2;
+    opacity: 0;
+    width: 100%;
+    transition: all 1.5s;
+}
+.box3 .box3-imgBox>div.on .kb img {
+    scale: 1;
+    opacity: 1;
+}
+.box3-imgBox>div .ellipse {
+    border-radius: 990px;
+    background: linear-gradient(180deg, rgba(145,149,150,1) 0%, rgba(255,255,255,0) 100%);
+    width: 700px;
+    height: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-75deg);
+    transition: all 1.5s;
+}
+.box3-imgBox.on>div .ellipse {
+    transform: translate(-50%, -50%) rotate(150deg);
+}
+
+/* .box3-imgBox 각각설정 */
+.box3-imgBox .imgBox1 h2 {
+    color: #1d1d21;
+}
+.box3-imgBox .imgBox1 .ellipse {
+    background: linear-gradient(180deg, rgb(26, 27, 28) 0%, rgba(255,255,255,0) 100%);
+}
+
+.box3-imgBox .imgBox2 h2 {
+    color: #8374A5;
+}
+.box3-imgBox .imgBox2 .ellipse {
+    background: linear-gradient(180deg, rgba(163,203,184,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.box3-imgBox .imgBox3 h2 {
+    color: #745598;
+}
+.box3-imgBox .imgBox3 .ellipse {
+    background: linear-gradient(180deg, rgba(199,185,229,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.box3-imgBox .imgBox4 h2 {
+    color: #929293;
+}
+.box3-imgBox .imgBox4 .ellipse {
+    background: linear-gradient(180deg, rgba(157,157,159,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* box4 설정 */
+.box4 {
+    background-color: #F3F3F8;
+    overflow: hidden;
+}
+.box4 h2 {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+    color: #6967C4;
+    transform: translateY(-200px);
+    transition: all 1s;
+}
+.box4-inner {
+    display: flex;
+    justify-content: space-between;
+}
+.box4-inner>div {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 120px;
+    transform: translateY(500px);
+}
+.box4 .box4-inner .list1 {
+    transition: all 0.6s;
+}
+.box4 .box4-inner .list2 {
+    transition: all 1s;
+}
+.box4 .box4-inner .list3 {
+    transition: all 1.4s;
+}
+.box4 .box4-inner .list4 {
+    transition: all 1.8s;
+}
+.box4-inner>div img:nth-child(1) {
+    width: 20%;
+    padding-bottom: 16px;
+}
+
+.box4-inner>div .img02 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box4-inner>div .img02 img {
+    text-align: center;
+    width: 50%;
+    padding-bottom: 24px;
+    transform: rotateY(720deg);
+}
+.box4 .box4-inner .img02 img {
+    transition: all 0.6s;
+}
+.box4 .box4-inner .img02 img {
+    transition: all 1s;
+}
+.box4 .box4-inner .img02 img {
+    transition: all 1.4s;
+}
+.box4 .box4-inner .img02 img {
+    transition: all 1.8s;
+}
+.box4-inner>div h3 {
+    font-size: 18px;
+    color: #47467C;
+    padding-bottom: 16px;
+    text-align: center;
+}
+.box4-inner>div p {
+    font-size: 16px;
+    color: #7A7A8C;
+    text-align: center;
+    line-height: 1.5;
+}
+/* box4 ON 값 설정 */
+.box4.on h2 {
+    transform: translateY(0);
+}
+.box4.on .box4-inner>div {
+    transform: translateY(0);
+}
+.box4.on .box4-inner>div .img02 img {
+    transform: rotateY(0deg);
+}
+
+
+/* box5 설정 */
+.box5-inner {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    display: flex;
+    justify-content: space-between;
+    height: 610px;
+}
+.box5-inner .imgBox {
+    width: 47%;
+    position: relative;
+    overflow: hidden;
+}
+.box5-inner .imgBox li {
+    opacity: 0;
+    transition: all 0.4s;
+}
+.box5-inner .imgBox li.on {
+    opacity: 1;
+}
+.box5-inner .imgBox img {
+    height: 100%;
+    position: absolute;
+    left: -65px;
+}
+
+
+.box5-inner .txtBox {
+    width: 48%;
+}
+.box5-inner .txtBox-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.box5-inner .title {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #6967C4;
+    margin-bottom: 24px;
+    margin-left: 4px;
+}
+.box5-inner .title .icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    margin-top: 8px;
+    animation: recycle linear infinite 3s;
+}
+@keyframes recycle {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.box5-inner .title .icon img {
+    width: 100%;
+    height: 100%;
+}
+.box5-inner .title h3 {
+    font-size: 48px;
+    color: #6967C4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+
+.box5-inner .listBox li {
+    padding-bottom: 20px;
+}
+.box5-inner .listBox li h3 {
+    font-size: 18px;
+    color: #47467C;
+    padding-bottom: 12px;
+    transition: all 0.4s;
+}
+.box5-inner .listBox li p {
+    color: #7A7A8C;
+    line-height: 1.5;
+    transition: all 0.4s;
+}
+.box5-inner .listBox li.on h3 {
+    font-size: 20px;
+    color: #47467C;
+    font-weight: 800;
+}
+.box5-inner .listBox li.on p {
+    color: #1d1d21;
+}
+
+/* box6 설정 ----------------------------------------------------------------- */
+.box6 {
+    width: 100%;
+    height: 250px;
+    margin-top: 120px;
+    overflow: hidden;
+    position: relative;
+}
+.box6-inner-bg {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 220px;
+    background-color: #47467C;
+}
+.box6-inner {
+    height: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+.box6-inner>div {
+    width: 50%;
+}
+.box6-inner .txtBox {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.box6-inner .txtBox h2 {
+    color: #fff;
+    font-size: 48px;
+    transform: translateX(-300%);
+    transition: all 1s;
+}
+.box6-inner .imgBox {
+    height: 100%;
+    position: relative;
+    transform: translateX(300%);
+    transition: all 1s;
+}
+.box6-inner .imgBox img {
+    width: 60%;
+    position: absolute;
+}
+.box6-inner .imgBox img:nth-child(1) {
+    right: 0;
+    top: -15%;
+}
+.box6-inner .imgBox img:nth-child(2) {
+    left: 0;
+    bottom: 20px;
+}
+/* box6 ON 값 설정 */
+.box6.on .box6-inner .txtBox h2 {
+    transform: translateX(0);
+}
+.box6.on .box6-inner .imgBox {
+    transform: translateX(0);
+}
+
+/* box7 설정 -------------------------------------------------------------------*/
+.box7 {
+    width: 100%;
+    padding: 120px 0;
+    overflow: hidden;
+}
+.box7 .txtBox {
+    transform: translateY(-800px);
+    transition: all 1s;
+}
+.box7 .title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+.box7 .title img {
+    width: 170px;
+    height: 50px;
+    margin-top: 4px;
+    margin-right: 16px;
+}
+.box7 .title h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    color: #47467C;
+}
+.box7 .text {
+    width: 70%;
+    margin: 0 auto;
+}
+.box7 .text p {
+    text-align: center;
+    line-height: 1.5;
+}
+.box7 .text p:nth-child(1) {
+    margin-bottom: 20px;
+}
+.box7 .text p:nth-child(2) {
+    margin-bottom: 48px;
+}
+.box7 .imgBox {
+    width: 100%;
+    height: 100%;
+    transform: translateY(800px);
+    transition: all 1s;
+}
+.box7 .imgBox>div {
+    display: flex;
+    justify-content: space-between;
+}
+.box7 .imgBox>div>img {
+    width: 49%;
+}
+.box7 .imgBox .imgBox-1 img {
+    margin-bottom: 2%;
+}
+
+/* box7 ON 값 설정 */
+.box7.on .txtBox {
+    transform: translateY(0);
+}
+.box7.on .imgBox {
+    transform: translateY(0);
+}
+/* box8 설정 ----------------------------------------------------------------*/
+.footer {
+    background-color: #47467C;
+}
+.box8-inner .top {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
+.box8-inner .top .leftBox {
+    display: flex;
+    width: 70%;
+}
+.box8-inner .top .leftBox>div {
+    margin-right: 80px;
+}
+.box8-inner .top .leftBox>ul>li {
+    margin-right: 80px;
+}
+.box8-inner .top .leftBox p {
+    margin-bottom: 28px;
+    /* display: inline-block; */
+    font-weight: 600;
+    color: #fff;
+}
+.box8-inner .top .leftBox li {
+    color: #fff;
+    margin-bottom: 24px;
+}
+.box8-inner .top .leftBox a {
+    color: #fff;
+}
+.box8-inner .top .leftBox ul li:hover a {
+    border-bottom: 1px solid #fff;
+}
+
+.box8-inner .top .rightBox {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+}
+.box8-inner .top .rightBox h2 {
+    background-image: url(img/01.main/08.footer/logo.png);
+    height: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    margin: auto 0;
+}
+
+.box8-inner .bottom {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.box8-inner .bottom .copy {
+    display: flex;
+    align-items: flex-end;
+}
+.box8-inner .bottom .copy p {
+    color: #fff;
+}
+.box8-inner .bottom .sns {
+    width: 16%;
+}
+.box8-inner .bottom .sns ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.box8-inner .bottom .sns i {
+    font-size: 32px;
+    color: #fff;
+}
+
+
+
+
+
+
+/* 미디어쿼리------------------------------------------------------------------- */
+@media (min-width:1280px) {
+    .gnb, .box2-inner, .box3-inner, .box4-inner, .box5-inner, .box6-inner, .arrow,
+    .box7, .box8-inner {
+        max-width: 1280px;
+        margin : 0 auto;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린쇼핑몰</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ff85a2;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-family: 'Georgia', serif;
+        }
+        nav ul, .util ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li, .util ul li {
+            margin-right: 20px;
+        }
+        nav ul li a, .util ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .util li a {position: relative;}
+        .util span {
+        position: absolute;
+        right: -10px;
+        top: -12px;
+        font-size: 10px;
+        background: red;
+        color: #000;
+        padding: 5px;
+        border-radius: 50%;
+        }
+        #wrap {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        article ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        article ul li {
+            width: 20%;
+            height: 200px;
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        article ul li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            display: block;
+          
+            
+        }
+        article ul li a span {
+            color: #ffffff;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 3px;
+            background-color: #ff85ff;
+        }
+
+        em {display: block;}
+
+
+        .shop {display: block;
+        position: fixed;
+        background-color: rgba(0,0,0,0.8);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        color: #fff;
+        }
+
+        .shop section {width: 60%;
+                    margin: 50px auto;}
+        
+
+        .shop div {background-color: #ff85a2;
+        padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+        .shop div em {}
+
+
+
+        .shop div.btn {background-color: transparent;
+                text-align: center;
+            display: block;}
+
+            .shop div.btn button {cursor: pointer;}
+    </style>
+
+
+<!-- 제이쿼리CDN -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script>
+    $(function(){
+
+        // product1 의 span을 클릭했을때 util 안에 잇는 span의 숫자가 올라가라
+
+        let i= 0;
+        $('.product1').find('span').click(function(e){
+            e.preventDefault()
+
+            i++;
+            console.log(i)
+
+            $('.util').find('span').text(i);
+            let txt = $(this).parents('a').find('p').html()
+            console.log(txt)
+        
+
+            $('.shop').find('span').text(i)
+            $('.shop section').find('div').append(txt)
+
+
+        })
+
+        // .util 에 있는 li중에 첫번째를 클릭했을때 ,shop이 보여라 
+
+        $('.util li').eq(0).click(function(){
+
+            $('.shop').css({'display':'block'})
+        });
+
+
+
+        // reset을 클릭했을때 shop이 사라져라
+        $('.reset').click(function(){
+
+            $('.shop').css({'display':'none'})
+        })
+
+
+
+
+    })
+</script>
+</head>
+<body>
+
+    <header>
+         <h1>로고</h1>
+         <nav>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+         </nav>
+         <div class="util">
+            <ul>
+                <li><a href="#">장바구니<span>0</span></a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+         </div>
+    </header>
+
+    <div id="wrap">
+
+        <section class="product1">
+            <h2>title</h2>
+            <article>
+                <ul>
+                    <li><a href="#"><p><em><img src="https://picsum.photos/id/200/200/200" alt=""></em></p>
+                            <span class="cart">담기</span>
+                    </a></li>
+                    <li><a href="#"><p><em><img src="https://picsum.photos/id/250/200/200" alt=""></em></p>
+                         <span class="cart">담기</span>
+                    </a></li>
+                    <li><a href="#"><p><em><img src="https://picsum.photos/id/400/200/200" alt=""></em></p>
+                         <span class="cart">담기</span>
+                    </a></li>
+                    <li><a href="#"><p><em><img src="https://picsum.photos/id/500/200/200" alt=""></em></p>
+                         <span class="cart">담기</span>
+                    </a></li>
+                </ul>
+            </article>
+        </section>
+        <section>
+            <h2>title</h2>
+        </section>
+        <section>
+            <h2>title</h2>
+        </section>
+
+    </div>
+
+
+    <div class="shop">
+        <section>
+            <h2>제품리스트</h2>
+            <div>
+              
+            </div>
+            <p>장바구니 갯수:<span>00</span></p>
+        </section>
+
+       <div class="btn">
+            <button class="login"><a href="#">결제하기</a></button>
+            <button class="reset">되돌아가기</button>
+       </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,1139 @@
+@charset "UTF-8";
+
+/* 폰트 설정 */
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+span {
+    color: #fff;
+}
+p {
+    color: #fff;
+}
+h2 {
+    color: #fff;
+    font-family: 'GmarketSansLight';
+    font-weight: 100;
+    font-size: 32px;
+    margin-bottom: 36px;
+}
+a {
+    color: #fff;
+}
+em {
+    font-style: normal;
+    font-weight: 200;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* 스크롤 위치 보기 */
+.scroll {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+}
+.scroll h2 {
+    color: #fff;
+}
+
+/* body.on 설정 ------------------------------------------------------------- */
+body.on {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* wrap 설정 ---------------------------------------------------------------- */
+.wrap {
+    width: 100%;
+}
+
+/* header 설정 --------------------------------------------------------------- */
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 100;
+    opacity: 0;
+    transition: all 2s;
+}
+header.on {
+    opacity: 1;
+}
+header ul {
+    display: flex;
+    width: 98%;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+}
+header li {
+    width: 100px;
+    height: 28px;
+    text-align: center;
+    margin: 0px 8px;
+    padding: 20px;
+    overflow: hidden;
+}
+header li a {
+    font-family: 'GmarketSansLight';
+    font-size: 20px;
+    color: #fff;
+}
+header li a:hover {
+    font-family: 'GmarketSansMedium';
+    /* border-bottom: 1px solid #FF57DC; */
+    color: #FF57DC;
+}
+header li.on a {
+    font-family: 'GmarketSansMedium';
+    /* border-bottom: 1px solid #FF57DC; */
+    color: #FF57DC;
+}
+
+/* section 설정 --------------------------------------------------------------- */
+section {
+    width: 100%;
+    height: 200vh;
+}
+
+/* main 설정 --------------------------------------------------------------- */
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/main/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.main .main-txt {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.main .main-txt .designLogo {
+    position: absolute;
+    width: 15%;
+    height: 9%;
+    top: 30%;
+    left: 10%;
+    overflow: hidden;
+    z-index: 100;
+}
+.main .main-txt .designLogo img {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    transition: all 1s;
+    cursor: pointer;
+}
+.main .main-txt .designLogo.on img {
+    top: 0%;
+}
+
+.main .txtBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 3s;
+}
+.main.on .txtBox {
+    opacity: 1;
+}
+.main .txtBox .txt {
+    width: 80%;
+    height: 24%;
+    position: relative;
+}
+.main .txtBox .txt img:nth-child(1) {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.main .txtBox .flower {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.main .txtBox .flower img:nth-child(1){
+    position: absolute;
+    top: 35%;
+    left: 18%;
+    width: 4%;
+    animation: rotate 5s linear infinite;
+}
+.main .txtBox .flower img:nth-child(2){
+    position: absolute;
+    top: 35%;
+    right: 33%;
+    width: 4%;
+    animation: rotate 5s linear infinite;
+}
+.main .txtBox .flower img:nth-child(3){
+    position: absolute;
+    top: 35%;
+    right: 6%;
+    width: 4%;
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main .info img:nth-child(1) {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 10%;
+    opacity: 0;
+    transition: all 2s;
+    cursor: pointer;
+}
+.main .info img:nth-child(2) {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    width: 10%;
+    opacity: 0;
+    transition: all 2s;
+    cursor: pointer;
+}
+.main .info.on img {
+    opacity: 1;
+}
+
+/* profile 설정 ------------------------------------------------------------ */
+.profile {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/profile/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.profileBox {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soomin {
+    width: 35%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto 0;
+}
+.soomin .soominBox {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 80px;
+}
+.soomin .soominBox .name {
+    width: 80%;
+}
+.soomin .soominBox .flower1 {
+    width: 3%;
+    position: absolute;
+    bottom: 11.2%;
+    left: 18.8%;
+    animation: rotate 5s linear infinite;
+}
+.soomin .soominBox .flower2 {
+    width: 3%;
+    position: absolute;
+    bottom: 11.2%;
+    left: 32.5%;
+    animation: rotate 5s linear infinite;
+}
+.soomin span {
+    font-family: 'pretendard';
+    font-size: 18px;
+    line-height: 28pt;
+    margin-bottom: 80px;
+}
+.soomin .email {
+    display: flex;
+}
+.soomin .email p {
+    display: block;
+    margin-right: 20px;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+}
+
+.profile .about {
+    width: 75%;
+    height: auto;
+    margin: auto 0;
+}
+.profile .about .top {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.profile .title {
+    width: auto;
+    height: 20%;
+    margin-bottom: 40px;
+}
+.profile .title img {
+    width: auto;
+    height: 60px;
+}
+
+.profile .about .top .left {
+    width: 60%;
+    height: 100%;
+}
+.profile .edu .list {
+    display: flex;
+    margin-bottom: 80px;
+}
+.profile .edu .list span {
+    font-size: 16px;
+    line-height: 2;
+    margin-right: 48px;
+}
+
+.profile .career {
+    width: 88%;
+    margin-bottom: 80px;
+}
+.profile .career span {
+    font-size: 12.5px;
+}
+.profile .career .year {
+    display: flex;
+    justify-content: space-around;
+}
+.profile .career .year span {
+    margin-bottom: 16px;
+}
+.profile .career .txt span {
+    text-align: center;
+    width: 16.6666%;
+    margin-top: 16px;
+}
+.profile .career .txt {
+    display: flex;
+    justify-content: space-around;
+}
+.profile .career .graph {
+    width: 100%;
+    position: relative;
+}
+.profile .career .graph .line {
+    border: 1px solid #FF57DC;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+}
+.profile .career .graph .circleBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile .career .graph .circle {
+    width: 8px;
+    height: 8px;
+    background-color: #FF57DC;
+    border-radius: 100%;
+}
+.profile .about .top .right {
+    width: 40%;
+    height: 100%;
+}
+
+.profile .act .list {
+    display: flex;
+    margin-bottom: 80px;
+}
+.profile .act .list span {
+    font-size: 16px;
+    line-height: 2;
+}
+.profile .act .list span:nth-child(1) {
+    margin-right: 48px;
+}
+.profile .key .list p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+
+.profile .skill {
+    height: 100%;
+}
+.profile .skill .title {
+    height: 6%;
+}
+.profile .skill .title img {
+    height: 60px;
+}
+.profile .skill .list {
+    display: flex;
+    justify-content: space-between;
+}
+.profile .skill .list img {
+    height: 70px;
+    margin-bottom: 16px;
+}
+.profile .skill .list p {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+}
+/* design 설정 ------------------------------------------------------------- */
+.design {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/main/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.designBox {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.designBox>div {
+    width: 25%;
+}
+.designBox>div .title {
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.designBox>div .title img:nth-child(1) {
+    height: 100%;
+}
+
+.designBox>div .line {
+    border-bottom: 1px solid #fff;
+    margin: 20px 0;
+}
+
+.designBox>div .imgBox {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 28px;
+}
+.designBox>div .imgBox img {
+    width: 100%;
+}
+.designBox>div ul {
+    width: 100%;
+}
+.designBox>div li {
+    height: 32px;
+}
+
+.designBox>div li p {
+    font-family: 'GmarketSansLight';
+    font-size: 18px;
+    display: block;
+    cursor: pointer;
+}
+.designBox>div .first-co {
+    display: flex;
+    justify-content: space-between;
+}
+.designBox>div .second-co {
+    display: flex;
+    justify-content: space-between;
+}
+.designBox>div .third-co {
+    display: flex;
+    justify-content: space-between;
+}
+.graphic .first-co:hover p {
+    color: #EA417A;
+    font-family: 'GmarketSansMedium';
+}
+.graphic .second-co:hover p {
+    color: #46B5B7;
+    font-family: 'GmarketSansMedium';
+}
+.graphic .third-co:hover p {
+    color: #CE7C73;
+    font-family: 'GmarketSansMedium';
+}
+.ci .first-co:hover p {
+    color: #FE7E03;
+    font-family: 'GmarketSansMedium';
+}
+.character .first-co:hover p {
+    color: #ffed4a;
+    font-family: 'GmarketSansMedium';
+}
+.designBox>div li span {
+    display: block;
+    border-bottom: 0.8px solid #fff;
+}
+
+
+/* design 내부 박스 설정 ----------------------------------*/
+.detailBox {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.detailBox>div {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+.detailBox .knote {
+    background-image: url(img/design/inside/knote-bg.png);
+}
+.detailBox .paradis {
+    background-image: url(img/design/inside/paradis-bg.png);
+}
+.detailBox .beyond {
+    background-image: url(img/design/inside/beyond-bg.png);
+}
+.detailBox .citrus-ci {
+    background-image: url(img/design/inside/ci-bg.png);
+}
+.detailBox .nori {
+    background-image: url(img/design/inside/character-bg.png);
+}
+.detailBox>div.on {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.detailBox>div .innerBox {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.detailBox>div .innerBox .txtBox {
+    width: 40%;
+    height: auto;
+}
+.detailBox>div .innerBox .txtBox .title {
+    width: auto;
+    height: 32px;
+    margin-bottom: 28px;
+}
+.detailBox>div .innerBox .txtBox .title img {
+    height: 100%;
+}
+.detailBox>div .innerBox .txtBox .line {
+    width: 20%;
+    border: 0.5px solid #fff;
+    margin-bottom: 28px;
+}
+.detailBox>div .innerBox .txtBox .info {
+    margin-bottom: 28px;
+}
+.detailBox>div .innerBox .txtBox .info span {
+    line-height: 2;
+}
+.detailBox>div .innerBox .txtBox .program {
+    width: 70%;
+    margin-bottom: 28px;
+}
+.detailBox>div .innerBox .txtBox .program span {
+    margin-bottom: 12px;
+    display: block;
+}
+.detailBox>div .innerBox .txtBox .program .skill {
+    display: flex;
+    width: 100%;
+}
+.detailBox>div .innerBox .txtBox .program .skill img {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+}
+.detailBox>div .innerBox .txtBox .txt {
+    width: 100%;
+    margin-bottom: 28px;
+}
+.detailBox>div .innerBox .txtBox .txt p {
+    display: block;
+    line-height: 2;
+    font-size: 18px;
+}
+.detailBox>div .innerBox .txtBox .button {
+    width: 80%;
+    display: flex;
+}
+.detailBox>div .innerBox .txtBox .button p {
+    display: block;
+    padding: 8px 0px;
+    border: 0.8px solid #fff;
+    margin-right: 20px;
+    width: 160px;
+    text-align: center;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.detailBox>div .innerBox .txtBox .button p:hover {
+    background-color: #fff;
+    color: #333;
+}
+.detailBox>div .innerBox .txtBox .button p:hover a {
+    color: #333;
+}
+
+.detailBox>div .innerBox .space {
+    width: 15%;
+}
+
+.detailBox>div .innerBox .imgBox {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+.detailBox>div .innerBox .imgBox img {
+    position: absolute;
+    width: 100%;
+    left: -100%;
+}
+.detailBox>div .innerBox .imgBox img:hover {
+    animation-play-state: paused;
+}
+.detailBox>div .innerBox .imgBox img:nth-child(1) {
+    left: 0;
+}
+
+.detailBox .back img {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+}
+.detailBox .back.on img {
+    display: block;
+    position: absolute;
+    width: 120px;
+    right: 5%;
+    bottom: 5%;
+    cursor: pointer;
+    z-index: 1000;
+    -webkit-animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+	animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+}
+
+
+/* publishing 설정 --------------------------------------------------------- */
+.pub {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/profile/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.pub .back img {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+}
+.pub .back.on img {
+    position: absolute;
+    width: 120px;
+    right: 5%;
+    bottom: 5%;
+    cursor: pointer;
+    z-index: 100;
+    -webkit-animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+	animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+}
+.citrus.on .back img {
+    display: block;
+}
+.logi.on .back img {
+    display: block;
+}
+.ty.on .back img {
+    display: block;
+}
+@-webkit-keyframes shake-bottom {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+    }
+    10% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+    80% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    90% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+}
+@keyframes shake-bottom {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+    }
+    10% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+    80% {
+        -webkit-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    90% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+}
+
+.pub>div {
+    width: 33.3333%;
+    position: relative;
+    cursor: pointer;
+    transition: all 1.2s;
+    visibility: visible;
+}
+
+.pub>div .title {
+    height: 4%;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pub>div .title h2 {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 16px;
+}
+.pub .citrus .title h2 {
+    color: #8DBE68;
+}
+.pub .logi .title h2 {
+    color: #6967C3;
+}
+.pub .ty .title h2 {
+    color: #C6A2B0;
+}
+.pub>div .title img {
+    height: 100%;
+}
+.pub>div .imac {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.pub>div .more {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.pub>div .more img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    transition: all 0.4s;
+    width: 200px;
+    z-index: 100;
+    opacity: 0;
+}
+.pub>div .imac:hover .more img {
+    opacity: 1;
+}
+
+.pub>div .imac .image {
+    width: 100%;
+    height: auto;
+    transition: all 0.4s;
+}
+.pub>div .imac:hover .image {
+    opacity: 0.4;
+}
+
+.citrus.on {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/publishing/citrus-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: auto;
+    visibility: visible;
+    cursor: default;
+}
+.citrusBox {
+    width: 60%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logi.on {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/publishing/logi-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: default;
+}
+.logiBox {
+    width: 60%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ty.on {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/publishing/ty-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: default;
+}
+.tyBox {
+    width: 60%;
+    height: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pub>div.on .title {
+    height: auto;
+    position: absolute;
+    width: 240px;
+    left: 20%;
+    bottom: 73%;
+    transform: translateX(0);
+}
+.pub>div.on .title h2 {
+    display: none;
+}
+.pub>div.on .title img {
+    width: 100%;
+}
+.pub>div .txtBox {
+    display: none;
+}
+.pub>div.on .txtBox {
+    width: 40%;
+    display: block;
+}
+.pub>div.on .txtBox .title {
+    width: 60%;
+    margin-bottom: 28px;
+}
+.pub>div.on .txtBox .title img {
+    width: 100%;
+}
+.pub>div.on .txtBox .line {
+    width: 20%;
+    border: 0.5px solid #fff;
+    margin-bottom: 28px;
+}
+.pub>div.on .txtBox .info {
+    margin-bottom: 28px;
+}
+.pub>div.on .txtBox .info span {
+    line-height: 2;
+}
+.pub>div.on .txtBox .program {
+    width: 70%;
+    margin-bottom: 28px;
+}
+.pub>div.on .txtBox .program span {
+    margin-bottom: 12px;
+    display: block;
+}
+.pub>div.on .txtBox .program .imgBox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.pub>div.on .txtBox .program .imgBox img {
+    width: 32px;
+    height: 32px;
+}
+.pub>div.on .txtBox .txt {
+    width: 100%;
+    margin-bottom: 28px;
+}
+.pub>div.on .txtBox .txt p {
+    display: block;
+    line-height: 2;
+    font-size: 18px;
+}
+.pub>div .button {
+    width: 40%;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    bottom: 16%;
+}
+.pub>div.on .button {
+    display: none;
+    /* width: 15%;
+    left: 20%;
+    bottom: 30%; */
+}
+.pub>div .button p {
+    display: block;
+    padding: 8px 0px;
+    margin-right: 20px;
+    width: 120px;
+    text-align: center;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.pub .citrus .button p {
+    border: 0.8px solid #8DBE68;
+    color: #8DBE68;
+}
+.pub .citrus .button p a {
+    color: #8DBE68;
+}
+.pub .citrus .button p:hover {
+    background-color: #8DBE68;
+    color: #fff;
+}
+.pub .logi .button p {
+    border: 0.8px solid #6967C3;
+    color: #6967C3;
+}
+.pub .logi .button p a {
+    color: #6967C3;
+}
+.pub .logi .button p:hover {
+    background-color: #6967C3;
+    color: #fff;
+}
+.pub .ty .button p {
+    border: 0.8px solid #C6A2B0;
+    color: #C6A2B0;
+}
+.pub .ty .button p a {
+    color: #C6A2B0;
+}
+.pub .ty .button p:hover {
+    background-color: #C6A2B0;
+    color: #fff;
+}
+.pub>div .button p:hover a {
+    color: #fff;
+}
+
+.pub>div.on .space {
+    width: 20%;
+}
+.pub>div.on .imac {
+    width: 40%;
+}
+.pub>div.on .imac img {
+    width: 100%;
+}
+.pub>div .CV {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.pub>div .CV img {
+    width: 60%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pub .conceptView {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: default;
+    transition: all 1s;
+    opacity: 0;
+    pointer-events: none;
+}
+.pub .conceptView.on {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    pointer-events: auto;
+}
+.pub .conceptView>div {
+    opacity: 0;
+    pointer-events: none;
+}
+.pub .conceptView>div.on {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 100;
+}
+.pub .conceptView>div::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+.pub .conceptView i {
+    position: absolute;
+    font-size: 36px;
+    color: #fff;
+    z-index: 1000;
+    right: 15%;
+    top: 10%;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+.pub .conceptView i:hover {
+    -webkit-animation: rotate-center 1s ease-in-out both;
+    animation: rotate-center 1s ease-in-out both;
+}
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.pub .conceptView>div img {
+    width: 90%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

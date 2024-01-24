@@ -1,0 +1,667 @@
+/* 언어설정 */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+/* 스크롤 위치 보기 */
+.scroll {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+}
+
+/* box1 설정 -------------------------------------------------------------------*/
+/* 띠배너 설정 */
+.box1-1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.animate-title {
+    display: flex;
+    background-color: #6967C4;
+    height: 40px;
+    align-items: center;
+}
+.animate-title ul {
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+.animate-title ul:nth-child(1) {
+    left: 0;
+    animation: animate-title01 linear 25s infinite;
+}
+.animate-title ul:nth-child(2) {
+    left: 100%;
+    animation: animate-title02 linear 25s infinite;
+}
+.animate-title li {
+    width: 20%;
+    color: #fff;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+}
+
+@keyframes animate-title01 {
+    0% {left: 0;}
+    50% {left: -100%;}
+    50.00001% {left: 100%;}
+    100% {left: 0;}
+}
+@keyframes animate-title02 {
+    0% {left: 100%;}
+    50% {left: 0;}
+    100% {left: -100%;}
+}
+
+.box1-2 {
+    background-color: #F3F3F8;
+}
+
+.box1-2 .gnb {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.box1-2 .gnb .logo {
+    width: 10%;
+}
+.box1-2 .gnb h1 {
+    background-image: url(img/01.main/01.header/logo.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
+.box1-2 .gnb .menu {
+    width: 60%;
+}
+.box1-2 .gnb .menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box1-2 .gnb .menu li a {
+    color: #6967C4;
+    font-size: 20px;
+}
+.box1-2 .gnb .menu li:hover a {
+    font-weight: 600;
+}
+
+.box1-2 .gnb .util {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10%;
+    position: relative;
+}
+.box1-2 .gnb .util p {
+    display: block;
+    margin: 0 12px;
+}
+.box1-2 .gnb .util i {
+    color: #6967C4;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box1-2 .gnb .util i:hover {
+    font-weight: 600;
+}
+
+
+/* box2 설정 ----------------------------------------------------------------------*/
+.box2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    width: 100%;
+    height: 180px;
+}
+.box2>div {
+    width: 50%;
+}
+.box2 .txtBox {
+    position: relative;
+    height: 100%;
+}
+.box2 .txtBox .category {
+    font-size: 18px;
+    color: #7A7A8C;
+    margin-bottom: 8px;
+}
+.box2 .txtBox h2 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    color: #6967C4;
+    margin-bottom: 8px;
+}
+.box2 .txtBox .price {
+    font-size: 20px;
+    color: #7A7A8C;
+}
+.box2 .txtBox .btn>div {
+    font-size: 28px;
+}
+.box2 .txtBox .btn .heart i {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color: #47467C;
+    cursor: pointer;
+}
+.box2 .txtBox .btn>div i:nth-child(2) {
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.box2 .txtBox .btn .bag i {
+    position: absolute;
+    left: 36px;
+    bottom: 0px;
+    color: #47467C;
+    cursor: pointer;
+}
+
+.box2 .optionBox {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.box2 .optionBox .color {
+    height: 44px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box2 .optionBox .color p {
+    border-radius: 90px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-indent: -9999px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.box2 .optionBox .color .white p {
+    background-color: #ECEDEF;
+    border: 2px solid #131314;
+}
+.box2 .optionBox .color .pink p {
+    background-color: #EFCDC8;
+    border: 2px solid #131314;
+}
+.box2 .optionBox .color .black p {
+    background-color: #2B2C30;
+    border: 2px solid #131314;
+}
+.box2 .optionBox .count {
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 16px;
+}
+.box2 .optionBox .count .minus {
+    width: 25%;
+    border: 1px solid #6967C4;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box2 .optionBox .count .minus i {
+    font-size: 40px;
+    color: #6967C4;
+}
+.box2 .optionBox .count .num {
+    width: 50%;
+    border: 1px solid #6967C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box2 .optionBox .count .num span {
+    font-size: 24px;
+    color: #6967C4;
+}
+.box2 .optionBox .count .plus {
+    width: 25%;
+    border: 1px solid #6967C4;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box2 .optionBox .count .plus i {
+    font-size: 40px;
+    color: #6967C4;
+}
+.box2 .optionBox .btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #6967C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.box2 .optionBox .btn:hover {
+    background-color: #6967C4;
+}
+.box2 .optionBox .btn.on {
+    background-color: #6967C4;
+}
+.box2 .optionBox .btn p {
+    color: #6967C4;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    transition: all 0.4s;
+}
+.box2 .optionBox .btn:hover p {
+    color: #fff;
+}
+.box2 .optionBox .btn.on p {
+    color: #fff;
+}
+
+/* .box3 설정 */
+.box3 {
+    background-color: #F3F3F8;
+    height: 740px;
+}
+.box3-inner {
+    margin: 80px 0;
+    position: relative;
+    height: 100%;
+}
+.box3-inner>div {
+    opacity: 0;
+    transition: all 0.4s;
+}
+.box3-inner>div.on {
+    opacity: 1;
+}
+.box3-inner .gallery {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 56px;
+    position: absolute;
+    top: 60px;
+}
+.box3-inner .gallery ul {
+    width: 60%;
+    height: 100%;
+    position: relative;
+}
+.box3-inner .gallery ul li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box3-inner .gallery ul li.on {
+    opacity: 1;
+}
+.box3-inner>div .gallery ul li img {
+    width: 100%;
+}
+
+.box3-inner>div .trailer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 60px;
+}
+.box3-inner>div .trailer ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    opacity: 0;
+    z-index: 1;
+}
+.box3-inner>div .trailer ul.on {
+    opacity: 1;
+    z-index: 10;
+}
+.box3-inner>div .trailer ul li {
+    width: 23%;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+}
+.box3-inner .trailer ul li:hover {
+    border: 1px solid #6967C4;
+}
+.box3-inner .trailer ul li.on {
+    border: 1px solid #6967C4;
+}
+.box3-inner>div .trailer li img {
+    width: 80%;
+}
+
+/* .box4 설정 */
+.box4 {
+    padding: 120px 0;
+    width: 100%;
+    height: 312px;
+    overflow: hidden;
+}
+.box4-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.box4-inner>div {
+    width: 50%;
+}
+.box4 .txtBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-140%);
+    transition: all 0.8s;
+}
+.box4 .txtBox.on {
+    transform: translateX(0%);
+}
+.box4 .txtBox h2 {
+    font-size: 40px;
+    margin-bottom: 28px;
+}
+.box4 .txtBox p {
+    line-height: 1.5;
+}
+
+.box4 .imgBox {
+    position: relative;
+    transform: translateX(160%);
+    transition: all 0.8s;
+}
+.box4 .imgBox.on {
+    transform: translateX(0%);
+}
+.box4 .imgBox img {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.box4 .imgBox img.on {
+    opacity: 1;
+}
+
+/* .box5 설정 */
+.box5 {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.box5 .bg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.box5 .bg img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 0.8s;
+}
+.box5 .bg img.on {
+    opacity: 1;
+}
+
+.box5 .txtBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    z-index: 10;
+}
+.box5 .txtBox .txtBox-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.box5 .txtBox h2 {
+    position: absolute;
+    font-size: 48px;
+    opacity: 0;
+    transition: all 0.8s;
+}
+.box5 .txtBox h2.on {
+    opacity: 1;
+}
+.box5 .txtBox h2:nth-child(2) {
+    color: #fff;
+}
+
+/* .box6 설정 */
+.box6 {
+    padding: 120px 0;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+}
+.box6 .txtBox {
+    text-align: center;
+}
+.box6 .txtBox .h2Box {
+    display: flex;
+    justify-content: center;
+}
+.box6 .txtBox .h2Box h2 {
+    margin: 0 8px;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+.box6 .txtBox .h2Box h2.on {
+    transform: translateY(0%);
+    transition: all 0.5s;
+}
+.box6 .txtBox .h2Box .first {
+    transform: translateY(-300%);
+}
+.box6 .txtBox .h2Box .second {
+    transform: translateY(-400%);
+}
+.box6 .txtBox p {
+    line-height: 1.5;
+    margin-bottom: 56px;
+    transform: translateY(-400%);
+    transition: all 0.5s;
+}
+.box6 .txtBox p.on {
+    transform: translateY(0);
+}
+
+.box6 .imgBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.box6 .imgBox .keyboard {
+    position: absolute;
+    left: 50%;
+    margin-left: -514.5px;
+    z-index: 10;
+    transform: translateY(150%);
+    transition: all 0.5s;
+}
+.box6 .imgBox .keyboard.on {
+    transform: translateY(0);
+}
+.box6 .imgBox .cable {
+    width: 3.2%;
+    position: absolute;
+    top: -53.6%;
+    right: 17.5%;
+    z-index: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+.box6 .imgBox .cable.on {
+    transform: translateY(0);
+}
+/* .box7 설정 */
+.box7 {
+    width: 100%;
+    height: 500px;
+    background-image: url(img/03.product/box7bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
+}
+.box7-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box7-inner h2 {
+    width: 25%;
+    color: #fff;
+    font-size: 60px;
+}
+.box7-inner .right {
+    text-align: right;
+}
+.box7-inner video {
+    width: 50%;
+}
+
+/* box8 설정 */
+.footer {
+    background-color: #47467C;
+}
+.box8-inner .top {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
+.box8-inner .top .leftBox {
+    display: flex;
+    width: 70%;
+}
+.box8-inner .top .leftBox>div {
+    margin-right: 80px;
+}
+.box8-inner .top .leftBox>ul>li {
+    margin-right: 80px;
+}
+.box8-inner .top .leftBox p {
+    margin-bottom: 28px;
+    /* display: inline-block; */
+    font-weight: 600;
+    color: #fff;
+}
+.box8-inner .top .leftBox li {
+    color: #fff;
+    margin-bottom: 24px;
+}
+.box8-inner .top .leftBox a {
+    color: #fff;
+}
+.box8-inner .top .leftBox ul li:hover a {
+    border-bottom: 1px solid #fff;
+}
+
+.box8-inner .top .rightBox {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+}
+.box8-inner .top .rightBox h2 {
+    background-image: url(img/01.main/08.footer/logo.png);
+    height: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    margin: auto 0;
+}
+
+.box8-inner .bottom {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.box8-inner .bottom .copy {
+    display: flex;
+    align-items: flex-end;
+}
+.box8-inner .bottom .copy p {
+    color: #fff;
+}
+.box8-inner .bottom .sns {
+    width: 16%;
+}
+.box8-inner .bottom .sns ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.box8-inner .bottom .sns i {
+    font-size: 32px;
+    color: #fff;
+}
+
+/* 미디어쿼리------------------------------------------------------------------- */
+@media (min-width:1280px) {
+    .gnb, .box2, .box3-inner, .box4-inner, .box5 .txtBox, .box6, .box7-inner, .box8-inner {
+        max-width: 1280px;
+        margin : 0 auto;
+    }
+}

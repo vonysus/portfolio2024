@@ -1,0 +1,571 @@
+/* 언어설정 */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+
+body.on {
+    overflow: hidden;
+}
+
+/* 스크롤 위치 보기 */
+.scroll {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 100;
+}
+
+/* box1 설정 */
+/* 띠배너 설정 */
+.box1-1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.animate-title {
+    display: flex;
+    background-color: #6967C4;
+    height: 40px;
+    align-items: center;
+}
+.animate-title ul {
+    width: 100%;
+    display: flex;
+    position: absolute;
+}
+.animate-title ul:nth-child(1) {
+    left: 0;
+    animation: animate-title01 linear 25s infinite;
+}
+.animate-title ul:nth-child(2) {
+    left: 100%;
+    animation: animate-title02 linear 25s infinite;
+}
+.animate-title li {
+    width: 20%;
+    color: #fff;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 4px;
+}
+
+@keyframes animate-title01 {
+    0% {left: 0;}
+    50% {left: -100%;}
+    50.00001% {left: 100%;}
+    100% {left: 0;}
+}
+@keyframes animate-title02 {
+    0% {left: 100%;}
+    50% {left: 0;}
+    100% {left: -100%;}
+}
+
+.box1-2 {
+    background-color: #F3F3F8;
+}
+
+.box1-2 .gnb {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.box1-2 .gnb .logo {
+    width: 10%;
+}
+.box1-2 .gnb h1 {
+    background-image: url(img/01.main/01.header/logo.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+}
+.box1-2 .gnb .menu {
+    width: 60%;
+}
+.box1-2 .gnb .menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box1-2 .gnb .menu li a {
+    color: #6967C4;
+    font-size: 20px;
+}
+.box1-2 .gnb .menu li:hover a {
+    font-weight: 600;
+}
+
+.box1-2 .gnb .util {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10%;
+    position: relative;
+}
+.util span {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 40px;
+    top: -16px;
+    font-size: 10px;
+    background: #6967C4;
+    color: #fff;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    }
+.box1-2 .gnb .util p {
+    display: block;
+    margin: 0 12px;
+}
+.box1-2 .gnb .util i {
+    color: #6967C4;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box1-2 .gnb .util i:hover {
+    font-weight: 600;
+}
+
+/* popup 설정 ----------------------------------------------------------- */
+.popup {
+    position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    color: #fff;
+    display: none;
+    justify-content: center;
+    z-index: 1000;
+    overflow: auto;
+}
+.popup-inner {
+    margin: 40px auto;
+    width: 40%;
+    height: auto;
+    position: relative;
+}
+.popup section {
+    width: 100%;
+    /* margin: 20px auto; */
+}
+.popup section div img {
+    width: 40%;
+}
+.popup section h2 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.popup section .count {
+    font-size: 16px;
+}
+.popup section div {
+    background-color: #aeaede;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.popup div.btn {
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+}
+.popup div p {
+    display: block;
+    width: 50%;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 0;
+}
+.popup div p img {
+    width: 80%;
+}
+.popup .btn .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.popup .btn .close i {
+    font-size: 24px;
+    cursor: pointer;
+}
+.popup .btn>p {
+    display: block;
+}
+.popup .btn>p a {
+    width: 160px;
+    height: 40px;
+    background-color: #6967C4;
+    color: #fff;
+    padding: 12px 60px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+}
+.popup .btn>p:hover a {
+    background-color: #47467C;
+}
+
+/* box2 설정 -----------------------------------------------------------------*/
+.box2 {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+}
+.box2>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 100%;
+}
+.box2 .banner01 {
+    background: linear-gradient(180deg, rgba(144,148,149,1) 0%, rgba(236,236,239,1) 100%);
+    left: 0;
+}
+.box2 .banner02 {
+    background: linear-gradient(180deg, rgba(145,208,178,1) 0%, rgba(246,232,129,1) 100%);
+}
+.box2 .banner03 {
+    background: linear-gradient(180deg, rgba(165,149,201,1) 0%, rgba(239,231,251,1) 100%);
+}
+.box2-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.box2-1>div {
+    width: 50%;
+}
+.box2-1 .txtBox {
+}
+.box2-1 .txtBox h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.box2-1 .txtBox p {
+    color: #fff;
+    font-size: 24px;
+}
+
+.box2-1 .imgBox {
+
+}
+.box2-1 .imgBox img {
+    width: 100%;
+}
+
+/* box3 설정 */
+.box3 {
+    width: 100%;
+}
+.box3-1 {
+    width: 100%;
+    border-bottom: 1px solid #6967C4;
+    margin-bottom: 60px;
+}
+.box3-1-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+.box3-1-inner>p {
+    color: #6967C4;
+    font-weight: 600;
+    cursor: pointer;
+}
+.box3-1-inner .order {
+    display: flex;
+}
+.box3-1-inner .order p {
+    margin-left: 12px;
+    color: #C5C4E3;
+    font-weight: 600;
+    cursor: pointer;
+}
+.box3-1-inner .order p:nth-child(2) {
+    border-left: 2px solid #6967C4;
+}
+.box3-1-inner .order p:hover {
+    color: #6967C4;
+}
+.box3-1-inner .order p.on {
+    color: #6967C4;
+}
+
+.box3-2 {
+    width: 100%;
+}
+.box3-2 ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.box3-2 li {
+    width: 24%;
+    height: 300px;
+    background-color: #F3F3F8;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.box3-2 li a {
+    display: block;
+    height: 100%;
+}
+.box3-2 li:hover {
+    background-color: #EEEDF8;
+}
+.box3-2 li .hot {
+    position: absolute;
+    display: block;
+    left: 12px;
+    top: 12px;
+    background-color: #47467C;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.box3-2 li .option {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.box3-2 li .option>div {
+    font-size: 28px;
+}
+.box3-2 li .option .heart i {
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    color: #47467C;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.box3-2 li:hover .option .heart i {
+    opacity: 1;
+}
+.box3-2 li:hover .option .bag i {
+    opacity: 1;
+}
+.box3-2 li .option .bag i {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: #47467C;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.box3-2 li .imgBox {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.box3-2 li img {
+    width: 80%;
+    margin-top: 70px;
+    margin-bottom: 28px;
+    transition: all 0.4s;
+}
+.box3-2 li:hover img {
+    width: 85%;
+    filter: drop-shadow(0px 0px 2.5px rgba(0, 0, 0, 0.5));
+}
+.box3-2 li .category {
+    font-size: 14px;
+    color: #7A7A8C;
+    margin-bottom: 8px;
+    height: 16.5px;
+    text-align: center;
+    display: block;
+}
+.box3-2 li h3 {
+    font-size: 18px;
+    color: #47467C;
+    text-align: center;
+}
+.box3-2 .last li:last-child {
+    background-color: #fff;
+    cursor: default;
+}
+
+.box3-3 {
+    width: 100%;
+    height: 150px;
+    background-color: #27273A;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+.box3-3-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.box3-3-inner h2 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    transition: all 0.4s;
+}
+.box3-3-inner h2.on {
+    font-size: 56px;
+}
+.box3-3-inner .imgBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.box3-3-inner .imgBox img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.box3-3-inner .imgBox img:nth-child(1) {
+    transform: translateY(100%);
+    transition: all 0.2s;
+}
+.box3-3-inner .imgBox img:nth-child(1).on {
+    transform: translateY(-10%);
+}
+.box3-3-inner .imgBox img:nth-child(2) {
+    transform: translateY(90%);
+    transition: all 0.3s;
+}
+.box3-3-inner .imgBox img:nth-child(2).on {
+    transform: translateY(0%);
+}
+
+
+
+
+
+/* box4 설정 */
+.footer {
+    background-color: #47467C;
+}
+.box4-inner .top {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
+.box4-inner .top .leftBox {
+    display: flex;
+    width: 70%;
+}
+.box4-inner .top .leftBox>div {
+    margin-right: 80px;
+}
+.box4-inner .top .leftBox>ul>li {
+    margin-right: 80px;
+}
+.box4-inner .top .leftBox p {
+    margin-bottom: 28px;
+    /* display: inline-block; */
+    font-weight: 600;
+    color: #fff;
+}
+.box4-inner .top .leftBox li {
+    color: #fff;
+    margin-bottom: 24px;
+}
+.box4-inner .top .leftBox a {
+    color: #fff;
+}
+.box4-inner .top .leftBox ul li:hover a {
+    border-bottom: 1px solid #fff;
+}
+
+.box4-inner .top .rightBox {
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+}
+.box4-inner .top .rightBox h2 {
+    background-image: url(img/01.main/08.footer/logo.png);
+    height: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+    margin: auto 0;
+}
+
+.box4-inner .bottom {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.box4-inner .bottom .copy {
+    display: flex;
+    align-items: flex-end;
+}
+.box4-inner .bottom .copy p {
+    color: #fff;
+}
+.box4-inner .bottom .sns {
+    width: 16%;
+}
+.box4-inner .bottom .sns ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.box4-inner .bottom .sns i {
+    font-size: 32px;
+    color: #fff;
+}
+
+
+
+
+/* 미디어쿼리------------------------------------------------------------------- */
+@media (min-width:1280px) {
+    .gnb, .box2-1, .box3-1-inner, .box3-2, .box3-3-inner, .box4-inner {
+        max-width: 1280px;
+        margin : 0 auto;
+    }
+}

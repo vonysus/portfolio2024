@@ -1,0 +1,732 @@
+/* 언어설정 */
+@charset 'UTF-8';
+
+/* 폰트 설정 */
+    @import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@300;400;600&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+/* 스크롤 설정 -------------------------------------------------------- */
+.scroll {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    z-index: 1000;
+    color: red;
+}
+
+/* box 설정 */
+.box {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* background-color: #080e0e; */
+}
+/* bg 설정 ----------------------------------------------------------- */
+.box .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+}
+.box .bg>div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.box .bg01 {
+    z-index: 1;
+    opacity: 0;
+    transition: all 2s;
+}
+.box .bg01.on {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 1;
+}
+.box .bg01 img {
+    width: 100%;
+    height: 100%;
+}
+.box .bg02 {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: all 2s;
+}
+.box .bg02.on {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 1;
+}
+.box .bg02 img {
+    width: 100%;
+    height: 100%;
+}
+.box .bg03 {
+    background-color: #2A2D33;
+    z-index: 1;
+    opacity: 0;
+    transition: all 2s;
+}
+.box .bg03.on {
+    z-index: 2;
+    opacity: 1;
+}
+.box .bg04 {
+    z-index: 1;
+    opacity: 0;
+    transition: all 2s;
+    background-color: #000;
+}
+.box .bg04.on {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* body 설정 ----------------------------------------------------------- */
+body {
+    position: relative;
+}
+
+/* article 설정 -------------------------------------------------------- */
+article {
+    opacity: 0;
+    z-index: 1;
+}
+article.on {
+    opacity: 1;
+    z-index: 101;
+}
+
+/* header 설정 --------------------------------------------------------- */
+header {
+    width: 98%;
+    height: 5.3%;
+    /* background-color: #080e0e; */
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 1%;
+    border: 1px solid #C7A3B1;
+    overflow: hidden;
+}
+header nav {
+    width: 98%;
+    height: 50%;
+    width: 100%;
+    height: 100%;
+}
+header ul {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+header li {
+    width: 40px;
+    display: flex;
+    padding: 0px 10px;
+    height: 28px;
+    justify-content: space-around;
+}
+header li a {
+    color: #fff;
+    margin: 0px 40px;
+    display: block;
+    font-size: 20px;
+    height: 24px;
+    font-family: 'Kalnia', serif;
+    font-weight: 300;
+}
+header li a:hover {
+    border-bottom: 1px solid #fff;
+}
+header li.on a {
+    border-bottom: 1px solid #fff;
+    font-weight: 400;
+}
+
+/* section 설정 -------------------------------------------------------- */
+.section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* frame 설정 ---------------------------------------------------------- */
+.frame {
+    width: 98%;
+    height: 91%;
+    margin: 0 auto;
+    position: absolute;
+    border: 1px solid #C7A3B1;
+    top: 7.1%;
+    z-index: 100;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.frame .radius {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    background-image: url(img/01.main/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 5% 60%;
+    z-index: 2;
+    opacity: 0;
+    transition: all 2s;
+}
+.frame .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #C7A3B1;
+    opacity: 0;
+    transition: all 2s;
+    z-index: 1;
+}
+/* frame On값 설정 */
+.frame.on .bg {
+    opacity: 1;
+}
+.frame.on .radius {
+    border-radius: 60px;
+    opacity: 1;
+}
+
+
+/* main 설정 ----------------------------------------------------------- */
+.main {
+    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+}
+
+.main .title {
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 120px;
+    z-index: 5;
+    opacity: 0;
+    transition: all 4s;
+}
+.main .title img {
+    width: 100%;
+}
+.main .circle {
+    width: 160%;
+    position: absolute;
+    left: -30%;
+    top: 60%;
+    animation: rotate_image 120s linear infinite;
+    z-index: 1;
+    transition: all 1s;
+}
+@keyframes rotate_image{
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main .circle img {
+    width: 100%;
+}
+.main .moon {
+    width: 25%;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+    transition: all 4s;
+}
+.main .moon img {
+    width: 100%;
+}
+.main .ty {
+    width: 90%;
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    transition: all 4s ease;
+}
+.main .ty img {
+    width: 100%;
+}
+
+article.main.on {
+    opacity: 1;
+}
+/* on 값 설정 */
+article.main.on .moon {
+    top: 8%;
+}
+article.main.on .title {
+    opacity: 1;
+}
+article.main.on .ty {
+    bottom: 3.7%;
+}
+
+/* profile 설정 -------------------------------------------------------------- */
+.profile {
+    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    height: 2400px;
+    overflow: auto;
+    z-index: 10;
+}
+.profile .first {
+    width: 100%;
+    height: 1200px;
+}
+.profile .first .title {
+    width: 90%;
+    position: absolute;
+    top: 9%;
+    left: -100%;
+    z-index: 20;
+    transition: all 4s;
+}
+.profile .first .title img {
+    width: 100%;
+}
+.profile .first .ty {
+    width: 85%;
+    position: absolute;
+    top: -4%;
+    left: 100%;
+    z-index: 20;
+    transition: all 4s;
+}
+.profile .first .ty img {
+    width: 100%;
+}
+.profile .first .click {
+    width: 10%;
+    position: absolute;
+    top: 20%;
+    right: 6%;
+    animation: scale 1.5s linear infinite;
+    z-index: 20;
+    cursor: pointer;
+}
+@keyframes scale {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+.profile .first .click img {
+    width: 100%;
+}
+
+.profile .second {
+    width: 100%;
+    height: 1200px;
+    transform: translateY(0%);
+}
+.profile .second.on {
+    transform: translateY(-100%);
+}
+.profile .second .title {
+    position: absolute;
+    width: 40%;
+    left: 3%;
+    top: 10%;
+    z-index: 20;
+}
+.profile .second .title img {
+    width: 100%;
+}
+.profile .second .ty {
+    width: 30%;
+    height: 100%;
+}
+.profile .second .ty img {
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.4s;
+}
+.profile .second .ty img.on {
+    opacity: 1;
+}
+.profile .second .line {
+    width: 50%;
+    height: 100%;
+}
+.profile .second .line img {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.profile .second .list {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.profile .second .list>div {
+    height: 18%;
+}
+.profile .second .list>div img {
+    height: 100%;
+    opacity: 0.4;
+    transition: all 0.4s;
+}
+.profile .second .list>div img.on {
+    opacity: 1;
+}
+/* profile on값 설정 */
+.profile .first.on {
+    transform: translateY(-100%);
+}
+article.profile.on .bg {
+    opacity: 1;
+}
+article.profile.on .radius {
+    border-radius: 60px;
+    opacity: 1;
+}
+article.profile.on .first .title {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+article.profile.on .first .ty {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+/* brand 설정 ----------------------------------------------------------- */
+.brand {
+    margin-top: 1%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+.brand .list {
+    position: absolute;
+    top: 8%;
+    height: 5%;
+    left: 4%;
+    z-index: 1000;
+}
+.brand .list ul {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+.brand .list ul li {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Kalnia', serif;
+    font-weight: 300;
+}
+.brand .list li.on:nth-child(1) {
+    color: #7790C9;
+    font-weight: 400;
+}
+.brand .cloud {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: 100;
+}
+.brand .cloud .one {
+    position: absolute;
+    right: 100%;
+    bottom: 10%;
+    animation: cloud1 35s linear infinite;
+}
+.brand .cloud .two {
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    animation: cloud2 40s linear infinite;
+}
+@keyframes cloud1 {
+    0% {right: 100%;}
+    50% {right: 0;}
+    100% {right: -100%;}
+}
+@keyframes cloud2 {
+    0% {right: 0;}
+    50% {right: -100%;}
+    50.00001% {right: 100%;}
+    100% {right: 0%;}
+}
+
+.brand>div {
+    width: 100%;
+    height: 100%;
+}
+.brandList>div {
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    z-index: 10;
+    opacity: 0;
+    bottom: 0;
+    transition: all 1s;
+}
+.brandList .arrow {
+    position: absolute;
+    right: 3%;
+    top: -3%;
+    width: 4%;
+}
+.brandList .arrow img {
+    width: 100%;
+}
+.brandList .click {
+    width: 18%;
+    position: absolute;
+    top: 0%;
+    left: 40%;
+    transform: translate(-50%, 0);
+    animation: scale2 1.5s linear infinite;
+    cursor: pointer;
+}
+.brandList .click img {
+    width: 100%;
+}
+@keyframes scale2 {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.brandList .card {
+    width: 90%;
+    height: 58%;
+    position: absolute;
+    top: 18%;
+    left: 51%;
+    transform: translate(-50%, 0%);
+    z-index: 1000;
+}
+.brandList .card>div {
+    width: 20%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    z-index: 100;
+}
+.brandList .card .first {
+    left: 0;
+}
+.brandList .card .second {
+    left: 25%;
+}
+.brandList .card .third {
+    left: 50%;
+}
+.brandList .card .fourth {
+    left: 75%;
+}
+
+.brandList .card>div img {
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+}
+.brandList .card>div:hover {
+    transform: translateY(-20px);
+}
+/* .brand .card>div .back {
+    transition: all 1s;
+    opacity: 1;x
+} */
+
+.brand>div .text {
+    height: 10%;
+    position: absolute;
+    right: 3%;
+    bottom: 8%;
+}
+.brand>div .text img {
+    height: 100%;
+}
+
+/* brand on값 설정 */
+.brand .list li.on {
+    font-weight: 400;
+}
+.brandList>div.on {
+    opacity: 1;
+    z-index: 1000;
+}
+.brandList>div.on .card {
+    z-index: 1000;
+}
+.brandList .card>div.on {
+    position: absolute;
+    left: 50%;
+    top: -15%;
+    transform: translate(-50%, 0) scale(1.4) rotateY(360deg);
+    z-index: 1000;
+    background-color: #C7A3B1;
+}
+
+.brand .card>div.on .back {
+    opacity: 0;
+}
+
+/* albums 설정 ---------------------------------------------------------------- */
+
+.albums {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.albums .list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.albums .list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.albums .list li {
+    height: 15%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin: 20px 0
+}
+.albums .list li img {
+    height: 100%; /* height 속성을 100%로 지정하여 li의 높이에 맞춥니다. */
+    z-index: 1000;
+    position: absolute;
+    cursor: pointer;
+}
+.albums .list li img:nth-child(1) {
+    opacity: 1;
+    transition: all 0.8s;
+}
+.albums .list li img:nth-child(2) {
+    opacity: 0;
+    transition: all 0.8s;
+}
+.albums .list li.on img:nth-child(1) {
+    opacity: 0;
+}
+.albums .list li.on img:nth-child(2) {
+    opacity: 1;
+}
+.albums .videoBox {
+    width: 98%;
+    height: 91%;
+    margin: 0 auto;
+    position: absolute;
+    top: 7.1%;
+    z-index: 100;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.albums .video {
+    width: 110%;
+    height: 110%;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.albums .video>video {
+    position: absolute;
+    width: 100%;
+    height: 92%;
+    top: 0%;
+    opacity: 0;
+    transition: all 1s;
+}
+.albums .video>video.on {
+    opacity: 1;
+}
