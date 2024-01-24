@@ -1062,7 +1062,7 @@ body.fix {
     display: flex;
     justify-content: space-between;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .box10-inner .top h3 {
     width: 50%;
@@ -1070,7 +1070,7 @@ body.fix {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 center;
-    height: 80%;
+    height: 100%;
     text-indent: -9999px;
 }
 .box10-inner .top .snsSet {
@@ -1189,7 +1189,7 @@ body.fix {
     }
     .box1-inner .logo {
         width: 30%;
-        height: 60%;
+        height: 80%;
     }
 
     .box1-inner .menu-icon {
