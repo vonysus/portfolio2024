@@ -8,12 +8,24 @@ setTimeout(function(){
     $('header').addClass('on');
 },2200)
 
+// 윈도우가 리사이징됐을 때 윈도우에 높이를 찾은 다음 높잇값을 변경
+$(window).resize(function(){
+    // 새로운 윈도우 높이 얻기
+    var newHeight = $(window).height();
+    console.log(newHeight);
+    
+    // 변경된 높이를 #content에 적용
+    $("article").height(newHeight);
+});
+
 // 스크롤했을 때 메뉴 변경
+let a = $("article").height();
+
 $(window).scroll(function() {
     let sc = $(this).scrollTop();
     $('.scroll h2').text(sc);
 
-    if (sc>=0) {
+    if (sc>=0*a) {
         $('header li:nth-child(1)').addClass('on');
         $('header li:nth-child(2)').removeClass('on');
         $('header li:nth-child(3)').removeClass('on');
@@ -22,7 +34,7 @@ $(window).scroll(function() {
         $('header li:nth-child(1)').removeClass('on');
     }
 
-    if (sc>=1175) {
+    if (sc>=1*a) {
         $('header li:nth-child(2)').addClass('on');
         $('header li:nth-child(1)').removeClass('on');
         $('header li:nth-child(3)').removeClass('on');
@@ -31,7 +43,7 @@ $(window).scroll(function() {
         $('header li:nth-child(2)').removeClass('on');
     }
 
-    if (sc>=2350) {
+    if (sc>=2*a) {
         $('header li:nth-child(3)').addClass('on');
         $('header li:nth-child(1)').removeClass('on');
         $('header li:nth-child(2)').removeClass('on');
@@ -40,7 +52,7 @@ $(window).scroll(function() {
         $('header li:nth-child(3)').removeClass('on');
     }
 
-    if (sc>=3525) {
+    if (sc>=3*a) {
         $('header li:nth-child(4)').addClass('on');
         $('header li:nth-child(1)').removeClass('on');
         $('header li:nth-child(2)').removeClass('on');
@@ -57,10 +69,10 @@ $('header li:nth-child(1)').click(function(){
 
 // profile 화면 보이기
 $('header li:nth-child(2)').click(function(){
-    $('html,body').stop().animate({'scrollTop': 1175}, 2000, 'easeOutBounce')
+    $('html,body').stop().animate({'scrollTop': 1*a}, 2000, 'easeOutBounce')
 })
 $('.main .info img:nth-child(2)').click(function(){
-    $('html,body').stop().animate({'scrollTop': 1175}, 2000, 'easeOutBounce')
+    $('html,body').stop().animate({'scrollTop': 1*a}, 2000, 'easeOutBounce')
     $('header li:nth-child(2)').addClass('on');
     $('header li:nth-child(1)').removeClass('on');
     $('header li:nth-child(3)').removeClass('on');
@@ -69,10 +81,10 @@ $('.main .info img:nth-child(2)').click(function(){
 
 // design 화면 보이기
 $('header li:nth-child(3)').click(function(){
-    $('html,body').stop().animate({'scrollTop': 2350}, 2000, 'easeOutBounce')
+    $('html,body').stop().animate({'scrollTop': 2*a}, 2000, 'easeOutBounce')
 })
 $('.designLogo').click(function(){
-    $('html,body').stop().animate({'scrollTop': 2350}, 2000, 'easeOutBounce');
+    $('html,body').stop().animate({'scrollTop': 2*a}, 2000, 'easeOutBounce');
     $('header li:nth-child(3)').addClass('on');
     $('header li:nth-child(1)').removeClass('on');
     $('header li:nth-child(2)').removeClass('on');
@@ -81,10 +93,10 @@ $('.designLogo').click(function(){
 
 // publishing 화면 보이기
 $('header li:nth-child(4)').click(function(){
-    $('html,body').stop().animate({'scrollTop': 3525}, 2000, 'easeOutBounce')
+    $('html,body').stop().animate({'scrollTop': 3*a}, 2000, 'easeOutBounce')
 })
 $('.main .info img:nth-child(1)').click(function(){
-    $('html,body').stop().animate({'scrollTop': 3525}, 2000, 'easeOutBounce')
+    $('html,body').stop().animate({'scrollTop': 3*a}, 2000, 'easeOutBounce')
     $('header li:nth-child(4)').addClass('on');
     $('header li:nth-child(1)').removeClass('on');
     $('header li:nth-child(2)').removeClass('on');
@@ -102,18 +114,6 @@ $('header ul li').click(function(){
     $('header li').eq(menu).addClass('on');
 })
 
-// back 클릭시
-$('.pub .back').click(function(){
-    console.log("Image clicked!");
-    $('.citrus').removeClass('on');
-    $('.logi').removeClass('on');
-    $('.ty').removeClass('on');
-    $('.back').removeClass('on');
-    $('.pub').addClass('on');
-    $('.CV').css('display','none');
-    $('.more').css('opacity','1');
-    $('.ty .imac .image').css('cursor','pointer');
-})
 
 // design> graphic 디자인 리스트 클릭시 화면 맞게 보이게
     // graphic>knotehow
@@ -201,66 +201,6 @@ $('.pub .back').click(function(){
 
     } ,4000)
 
-// publishing 항목 클릭시 맞는 화면 보이기
-var a = 0;
-$('.citrus .imac').click(function(){
-    a++;
-    if(a==2)a=0;
-    $('.pub').addClass('on')
-    $('.back').addClass('on')
-    $('.logi').removeClass('on');
-    $('.ty').removeClass('on');
-    $('.citrus').addClass('on');
-    $('.citrus .imac .image').css('cursor','none');
-    $('.more').css('opacity','0');
-
-    if(a==1){
-        $('.citrus').removeClass('on');
-        $('.pub').removeClass('on')
-        $('.back').removeClass('on');
-        $('.more').css('opacity','1');
-        $('.citrus .imac .image').css('cursor','pointer');
-    }
-})
-$('.logi .imac').click(function(){
-    a++;
-    if(a==2)a=0;
-    $('.pub').addClass('on')
-    $('.back').addClass('on')
-    $('.citrus').removeClass('on');
-    $('.ty').removeClass('on');
-    $('.logi').addClass('on');
-    $('.logi .imac .image').css('cursor','none');
-    $('.more').css('opacity','0');
-
-    if(a==1){
-        $('.logi').removeClass('on');
-        $('.pub').removeClass('on')
-        $('.back').removeClass('on')
-        $('.more').css('opacity','1');
-        $('.logi .imac .image').css('cursor','pointer');
-    }
-})
-
-$('.ty .imac').click(function(){
-    a++;
-    if(a==2)a=0;
-    $('.pub').addClass('on')
-    $('.back').addClass('on')
-    $('.citrus').removeClass('on');
-    $('.logi').removeClass('on');
-    $('.ty').addClass('on');
-    $('.ty .imac .image').css('cursor','none');
-    $('.more').css('opacity','0');
-
-    if(a==1){
-        $('.ty').removeClass('on');
-        $('.pub').removeClass('on')
-        $('.back').removeClass('on')
-        $('.more').css('opacity','1');
-        $('.ty .imac .image').css('cursor','pointer');
-    }
-})
 
 // conceptView 클릭했을 때 맞는 화면 나오기
 
@@ -291,5 +231,6 @@ $('.ty .imac').click(function(){
         $('.conceptView .logi-CV').removeClass('on');
         $('.conceptView .ty-CV').removeClass('on');
         $('.pub .conceptView').removeClass('on');
+        $('body').removeClass('on');
     })
 });

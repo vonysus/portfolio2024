@@ -688,34 +688,18 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    display: flex;
     overflow: hidden;
 }
+.pubBox {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-.pub .back img {
-    display: none;
-    position: absolute;
-    z-index: 1000;
-}
-.pub .back.on img {
-    position: absolute;
-    width: 120px;
-    right: 5%;
-    bottom: 5%;
-    cursor: pointer;
-    z-index: 100;
-    -webkit-animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
-	animation: shake-bottom 1.2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
-}
-.citrus.on .back img {
-    display: block;
-}
-.logi.on .back img {
-    display: block;
-}
-.ty.on .back img {
-    display: block;
-}
+
 @-webkit-keyframes shake-bottom {
     0%,
     100% {
@@ -783,22 +767,28 @@ section {
     }
 }
 
-.pub>div {
-    width: 33.3333%;
+.pubBox>div {
+    width: 25%;
+    height: auto;
     position: relative;
-    cursor: pointer;
     transition: all 1.2s;
     visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.pub>div .title {
-    height: 4%;
-    position: absolute;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
+.pubBox>div .title {
+    height: 1%;
+    width: auto;
+    /* background-color: red; */
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.pub>div .title h2 {
+.pubBox>div .title h2 {
     display: block;
     text-align: center;
     font-size: 20px;
@@ -813,42 +803,22 @@ section {
 .pub .ty .title h2 {
     color: #C6A2B0;
 }
-.pub>div .title img {
-    height: 100%;
+.pubBox>div .title img {
+    height: 40px;
+    width: auto;
+    /* background-color: blue; */
 }
-.pub>div .imac {
+.pubBox>div .imac {
     width: 100%;
     height: auto;
-    position: relative;
+    margin-bottom: 28px;
 }
-.pub>div .more {
+.pubBox>div .imac .image {
     width: 100%;
-    height: 100%;
-    position: absolute;
-}
-.pub>div .more img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
+    height: auto;
     transition: all 0.4s;
-    width: 200px;
-    z-index: 100;
-    opacity: 0;
-}
-.pub>div .imac:hover .more img {
-    opacity: 1;
 }
 
-.pub>div .imac .image {
-    width: 100%;
-    height: auto;
-    transition: all 0.4s;
-}
-.pub>div .imac:hover .image {
-    opacity: 0.4;
-}
 
 .citrus.on {
     width: 100%;
@@ -864,14 +834,6 @@ section {
     visibility: visible;
     cursor: default;
 }
-.citrusBox {
-    width: 60%;
-    height: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .logi.on {
     width: 100%;
@@ -885,14 +847,6 @@ section {
     z-index: 10;
     cursor: default;
 }
-.logiBox {
-    width: 60%;
-    height: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .ty.on {
     width: 100%;
     height: 100vh;
@@ -905,97 +859,18 @@ section {
     z-index: 10;
     cursor: default;
 }
-.tyBox {
-    width: 60%;
-    height: 95%;
-    margin: 0 auto;
+
+.pubBox>div .button {
+    width: 80%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pub>div.on .title {
-    height: auto;
-    position: absolute;
-    width: 240px;
-    left: 20%;
-    bottom: 73%;
-    transform: translateX(0);
-}
-.pub>div.on .title h2 {
-    display: none;
-}
-.pub>div.on .title img {
-    width: 100%;
-}
-.pub>div .txtBox {
-    display: none;
-}
-.pub>div.on .txtBox {
-    width: 40%;
-    display: block;
-}
-.pub>div.on .txtBox .title {
-    width: 60%;
-    margin-bottom: 28px;
-}
-.pub>div.on .txtBox .title img {
-    width: 100%;
-}
-.pub>div.on .txtBox .line {
-    width: 20%;
-    border: 0.5px solid #fff;
-    margin-bottom: 28px;
-}
-.pub>div.on .txtBox .info {
-    margin-bottom: 28px;
-}
-.pub>div.on .txtBox .info span {
-    line-height: 2;
-}
-.pub>div.on .txtBox .program {
-    width: 70%;
-    margin-bottom: 28px;
-}
-.pub>div.on .txtBox .program span {
-    margin-bottom: 12px;
-    display: block;
-}
-.pub>div.on .txtBox .program .imgBox {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-.pub>div.on .txtBox .program .imgBox img {
-    width: 32px;
-    height: 32px;
-}
-.pub>div.on .txtBox .txt {
-    width: 100%;
-    margin-bottom: 28px;
-}
-.pub>div.on .txtBox .txt p {
-    display: block;
-    line-height: 2;
-    font-size: 18px;
-}
-.pub>div .button {
-    width: 40%;
-    display: flex;
-    position: absolute;
     justify-content: space-between;
     bottom: 16%;
 }
-.pub>div.on .button {
-    display: none;
-    /* width: 15%;
-    left: 20%;
-    bottom: 30%; */
-}
-.pub>div .button p {
+.pubBox>div .button p {
     display: block;
     padding: 8px 0px;
     margin-right: 20px;
-    width: 120px;
+    width: 160px;
     text-align: center;
     transition: all 0.4s;
     cursor: pointer;
@@ -1022,37 +897,29 @@ section {
     background-color: #6967C3;
     color: #fff;
 }
-.pub .ty .button p {
+.ty .button p {
     border: 0.8px solid #C6A2B0;
     color: #C6A2B0;
 }
-.pub .ty .button p a {
+.ty .button p a {
     color: #C6A2B0;
 }
-.pub .ty .button p:hover {
+.ty .button p:hover {
     background-color: #C6A2B0;
     color: #fff;
 }
-.pub>div .button p:hover a {
+.pubBox>div .button p:hover a {
     color: #fff;
 }
 
-.pub>div.on .space {
-    width: 20%;
-}
-.pub>div.on .imac {
-    width: 40%;
-}
-.pub>div.on .imac img {
-    width: 100%;
-}
-.pub>div .CV {
+
+.pubBox>div .CV {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: auto;
 }
-.pub>div .CV img {
+.pubBox>div .CV img {
     width: 60%;
     position: absolute;
     top: 15%;
@@ -1068,6 +935,7 @@ section {
     transition: all 1s;
     opacity: 0;
     pointer-events: none;
+    top: 0;
 }
 .pub .conceptView.on {
     background-color: rgba(0, 0, 0, 0.6);
